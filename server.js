@@ -5,11 +5,11 @@ var path = require('path');
 var bodyParser = require('body-parser');
 
 // Global variables
-var port = 3000;
+var port = 4321;
 
 // setting up use
 app.use(express.static('public'));
-app.use(bodyParser.urlencoded({extened: true}));
+app.use(bodyParser.urlencoded({extended: true}));
 
 // set server up to listen
 app.listen(port, function(){

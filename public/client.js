@@ -1,5 +1,28 @@
-console.log("testing js");
+// get document ready
+$(document).ready(onReady);
 
-$(document).ready(function(){
-  console.log('testing jq');
-});
+function onReady (){
+  console.log('testing jq'); //testing jquery
+
+  //event listener
+  $('#add-button').on('click', addButton);
+  $('#sub-button').on('click', subButton);
+  $('#mult-button').on('click', multButton);
+  $('#div-button').on('click', divButton);
+}
+
+function addButton(){
+  console.log('add button click');
+}
+
+function subButton(){
+  console.log('sub button click');
+}
+
+function multButton(){
+  console.log('mult button click');
+}
+
+function divButton(){
+  console.log('div button click');
+}

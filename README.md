@@ -24,3 +24,15 @@ Pro Mode
 --------
 
 - Create a delay from when the client receives the response from the Server, and when the calculation is actually displayed on the DOM. The delay should be 3 seconds. During that delay, show information that says 'computing' until the 3 second delay has finished, then remove the 'computing' message while showing the calculation.
+
+***TODOs***
+
+-[x] add index.html
+-[x] add styles.css
+-[x] add server.js
+-[x] add client.js
+-[x] add module.js
+-[x] npm init --yes
+-[x] npm install express --save
+-[x] npm install body-parser --save
+-[x] npm install jquery --save
