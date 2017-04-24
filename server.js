@@ -34,20 +34,21 @@ app.post('/calulations', function(req, res){
 
   switch (type) {
     case 'addition':
-      total = (x + y);
+      total = x + y;
       break;
     case 'subtraction':
-      total = (x - y);
+      total = x - y;
       break;
     case 'multiply':
-      total = (x * y);
+      total = x * y;
       break;
     case 'divide':
-      total = (x / y);
+      total = x / y;
       break;
   }
 
-  allTotal.push(req.body);
+
+  allTotal.push(total);
   res.send(200);
 }); // end of /calulations app.post
 
@@ -56,5 +57,6 @@ app.get('/total', function(req, res){
   var responseObject = {
     total: allTotal
   };
+  console.log("total; ",responseObject.total);
   res.send(responseObject);
 }); //end of /total app.get

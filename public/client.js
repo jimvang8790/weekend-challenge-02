@@ -24,6 +24,7 @@ function calulation() {
   $.ajax({
     url: '/calulations',
     type: 'POST',
+    data: objectToSend,
     success: function(response){
       console.log('response back from the server', response);
     } // end of success
@@ -38,9 +39,11 @@ function inputTotal() {
     url: '/total',
     type: 'GET',
     success: function(response){
+      console.log(response.total);
       $('#total-div').empty();
+      // $('#total-div').append(response.total);
       for (var i = 0; i < response.total.length; i++) {
-        $( '#total-div' ).append(response.total[i]);
+        $( '#total-div' ).text(response.total[i]);
 
       } // end of for loop
     } // end of success
