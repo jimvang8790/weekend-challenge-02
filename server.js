@@ -29,7 +29,7 @@ app.post('/calulations', function(req, res){
   var total = 0;
   var type = req.body.type;
   var x = parseInt(req.body.x);
-  var y = parseInt(req.body.x);
+  var y = parseInt(req.body.y);
 
   switch (type) {
     case 'addition':
