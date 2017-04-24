@@ -26,6 +26,7 @@ app.get( '/', function(req, res){
 app.post('/calulations', function(req, res){
   console.log('/calulations hit:', req.body);
 
+// can not get it to take addition, subtraction, multiply, or divide
   var total = 0;
   var type = req.body.type;
   var x = parseInt(req.body.x);
