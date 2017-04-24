@@ -1,53 +1,54 @@
+
 // get document ready
 $(document).ready(onReady);
 
 function onReady (){
   console.log('testing jq'); //testing jquery
 
-  //event listener
-  $('#add-button').on('click', addButton);
-  $('#sub-button').on('click', subButton);
-  $('#mult-button').on('click', multButton);
-  $('#div-button').on('click', divButton);
-}
+  // event listener
+  $('.op-button').on('click', calulation);
+  $('#clearButton').on('click', clearDiv);
 
-function addButton(){
-  // checking if add button works when click
-  console.log('add button click');
+} // end of onReady function
 
-  // get the user input and package into an object
+function calulation() {
+  console.log('op-button click');
+  var op = $(this).attr('id');
   var objectToSend = {
-    num1Enter: $('#num1').val(),
-    num2Enter: $('#num2').val()
+    x: $('#num1').val(),
+    y: $('#num2').val(),
+    type: op
   }; // end of objectToSend
-  console.log('sending ->', objectToSend);
 
-  //sending object to server.js via ajax
+  // POST to send to server via ajax
   $.ajax({
-    url: '/addNum',
+    url: '/calulations',
     type: 'POST',
-    data: objectToSend,
-    success: function (response) {
-      console.log('back with the server with:', response);
-    }
-  });
+    success: function(response){
+      console.log('response back from the server', response);
+    } // end of success
+  }); // end of ajax
 
-} // end of addButton function
+  inputTotal();
+} // end of calulation function
 
-function subButton(){
-  // checking if sub button works when click
-  console.log('sub button click');
+function inputTotal() {
 
-} // end of subButton function
+  $.ajax({
+    url: '/total',
+    type: 'GET',
+    success: function(response){
+      $('#total-div').empty();
+      for (var i = 0; i < response.total.length; i++) {
+        $( '#total-div' ).append(response.total[i]);
 
-function multButton(){
-  // checking if mult button works when click
-  console.log('mult button click');
+      } // end of for loop
+    } // end of success
+  }); // end of ajax
+} // end of userTotal
 
-} // end of multButton function
-
-function divButton(){
-  // checking if div button works when click
-  console.log('div button click');
-
-} // end of divButton function
+function clearDiv() {
+  console.log('clear button click');
+  $( '#total-div' ).empty();
+  $('.inputs').val('');
+} // end of clearDiv function

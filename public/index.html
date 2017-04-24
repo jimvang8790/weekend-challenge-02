@@ -10,15 +10,19 @@
   <body>
     <h1>Weekend Challenge 02</h1>
     <h2>Calculator</h2>
-    <div id="container">
-      <input type="text" placeholder="number" id="num1">
-      <input type="text" placeholder="number" id="num2"><span> = <input type="text" placeholder="anwser" id="anwser"></span>
+    <div id="input-div">
+      <input type="text" placeholder="first number" id="num1"  class="inputs"/>
+      <input type="text" placeholder="second number" id="num2" class="inputs"/>
     </div>
-    <div class="button">
-      <button id="add-button"> + </button>
-      <button id="sub-button"> - </button>
-      <button id="mult-button"> * </button>
-      <button id="div-button"> / </button>
+    <div>
+      <button id="addition" class="op-button"> + </button>
+      <button id="subtraction" class="op-button"> - </button>
+      <button id="multiply" class="op-button"> * </button>
+      <button id="divide" class="op-button"> / </button>
+      <button id="clearButton"> AC </button>
+    </div>
+    <div id="#total-div">
+
     </div>
   </body>
 </html>
